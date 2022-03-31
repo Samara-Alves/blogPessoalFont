@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto d-flex align-items-center">
         <li class="nav-item active">
-          <img src="https://scontent.fcgh8-1.fna.fbcdn.net/v/t1.6435-9/148852937_1108118776320319_1848822732472114899_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=kLGeFRy6M3cAX9uic2a&tn=zk_fwN78J_6-IfGC&_nc_ht=scontent.fcgh8-1.fna&oh=00_AT9a931iW8qnGp36wGetFy37eWVJCTGFyV_uqnkqXyJvjw&oe=62609FBF" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
+          <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
         </li>
         <li class="nav-item pl-3">
-          <p class="m-0 font-weight-bold text-white fs-16">Nome do usúario</p>
+          <p class="m-0 font-weight-bold text-white fs-16">Olá,{{nome}}</p>
         </li>
         <li class="nav-item pl-3">
             <a href=""><p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p></a>
@@ -20,7 +20,7 @@
 
       <ul class="navbar-nav ml-auto d-flex align-items-center">
         <li class="nav-item pl-3">
-            <a class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+            <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-in" aria-hidden="true"></i></a>
           </li>
       </ul>
 
