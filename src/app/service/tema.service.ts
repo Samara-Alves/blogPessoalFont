@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, retry } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 
@@ -18,10 +18,18 @@ export class TemaService {
   getAllTemas(): Observable<Tema[]>{
     return this.http.get<Tema[]>('https://blogpessoalsamara.herokuapp.com/temas', this.token)
   }
-
+  getByIdTema(id: number): Observable<Tema>{
+ return this.http.get<Tema>(`https://blogpessoalsamara.herokuapp.com/temas/${id}`, this.token)
+  }
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://blogpessoalsamara.herokuapp.com/temas', tema, this.token)
   }
 
-  
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('https://blogpessoalsamara.herokuapp.com/temas', tema, this.token)
+  }
+  deleteTema(id: number) {
+    return this.http.delete(`https://blogpessoalsamara.herokuapp.com/temas/${id}`, this.token)
+    
+  }
 }
